@@ -269,3 +269,6 @@ A continuación se tiene un bucle while infinito el cual solicita la posición d
 ```
 ![image](https://github.com/robinsonorduz/LABORATORIO-4-CINEMATICA-DIRECTA/assets/20913010/949c6d72-2f05-41ea-9763-46b78d2175eb)
 
+## conclusiones
+-El entorno de ROS al principio puede ser confuso debido a que es un método nuevo de comunicacion entre software y hardware, ademas personalmente no habia trabajado mucho con Linux y hay cosas a las que cuesta acostumbrarse en este sistema operativo.
+-El mètodo de convertir un robot en un modelo matemàtico matricial de Denavit-Hartenberg ofrece un algoritmo facil de seguir resumiendolo en rotaciones y traslaciones para pasar de una articulaciòn a otra; necesitando una curva de aprendizaje por parte del estudiante resulta un mètodo muy intuitivo.
