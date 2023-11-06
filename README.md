@@ -13,7 +13,7 @@ Este paquete crea los nodos para acceder a los servicios de los motores dinamixe
 se instala para pyton, y permite dibujar las posiciones articulares del manipulador en una grafica que se ve en el PC.
 
 ## Crear el manipulador en el entorno virtual:
-se importan las librerias que van a dibujar el manipulador y configurar las variables a partir de la tabla DH para generar el grafico que copia la posicion del manipulador.
+se importan las librerias que van a dibujar el manipulador y configurar las variables a partir de la tabla DH para generar el grafico que copia la posición del manipulador.
 ``` python
   
     import roboticstoolbox as rtb
@@ -29,3 +29,22 @@ robot.plot([np.pi/6, -np.pi/3, 0, 0]).hold()
 ```
 https://github.com/robinsonorduz/LABORATORIO-4-CINEMATICA-DIRECTA/blob/main/img1.png
 
+## Suscripción a las variables de articulación del manipulador:
+para ver el angulo de articulacion de los motores, se ejecuta px_robot desde catkin y luego se ejecuta el archivo Suscriptor.py
+``` 
+  
+   catkin build px_robot
+   source devel/setup.bash
+   roslaunch px_robot px_controllers.launch
+    
+```
+```  python
+  
+  import rospy
+  import numpy as np
+  import roboticstoolbox as rtb
+  from std_msgs.msg import String 
+  from sensor_msgs.msg import JointState
+  import time as t
+    
+```
