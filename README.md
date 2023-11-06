@@ -50,3 +50,4 @@ para ver el angulo de articulacion de los motores, se ejecuta px_robot desde cat
 ```
 ## Verificación del home del manipulador
 https://github.com/robinsonorduz/LABORATORIO-4-CINEMATICA-DIRECTA/blob/main/home.png
+https://github.com/robinsonorduz/LABORATORIO-4-CINEMATICA-DIRECTA/blob/main/home_consola.png
