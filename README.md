@@ -267,4 +267,5 @@ A continuación se tiene un bucle while infinito el cual solicita la posición d
                 jointCommand('',4, 'Goal_Position', calculaAngulo(10,4), 0)
                 robot.plot([np.pi/180*-90, np.pi/180*45, np.pi/180*-55, np.pi/180*10])
 ```
+![image](https://github.com/robinsonorduz/LABORATORIO-4-CINEMATICA-DIRECTA/assets/20913010/949c6d72-2f05-41ea-9763-46b78d2175eb)
 
