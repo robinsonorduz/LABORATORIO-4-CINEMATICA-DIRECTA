@@ -48,3 +48,4 @@ para ver el angulo de articulacion de los motores, se ejecuta px_robot desde cat
   import time as t
     
 ```
+## Verificación del home del manipulador
