@@ -12,5 +12,18 @@ Este paquete crea los nodos para acceder a los servicios de los motores dinamixe
 ## instalar libreria de Peter Corke:
 se instala para pyton, y permite dibujar las posiciones articulares del manipulador en una grafica que se ve en el PC.
 
-
+## Crear el manipulador en el entorno virtual:
+se importan las librerias que van a dibujar el manipulador a partir de la tabla DH
+``` python
+  
+    import roboticstoolbox as rtb
+    import numpy as np
+    import time as t
+    robot= rtb.DHRobot([
+      rtb.RevoluteDH(d=0.045, alpha= -np.pi/2, offset= 0),
+      rtb.RevoluteDH(a= 0.105, offset= -np.pi/2),
+      rtb.RevoluteDH(a=0.105, offset= np.pi/2),
+      rtb.RevoluteDH(a=0.110, offset= np.pi/2)
+    ], name= "Pincher")
+```
 
