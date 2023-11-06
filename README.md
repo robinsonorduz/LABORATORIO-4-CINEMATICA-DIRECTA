@@ -27,4 +27,5 @@ se importan las librerias que van a dibujar el manipulador y configurar las vari
     ], name= "Pincher")
 robot.plot([np.pi/6, -np.pi/3, 0, 0]).hold()
 ```
+https://github.com/robinsonorduz/LABORATORIO-4-CINEMATICA-DIRECTA/blob/main/img1.png
 
