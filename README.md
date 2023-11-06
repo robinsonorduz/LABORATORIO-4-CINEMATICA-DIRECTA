@@ -6,5 +6,11 @@ en este laboratorio se hace cinematica directa de un manipulador phantom x pinch
 https://github.com/robinsonorduz/LABORATORIO-4-CINEMATICA-DIRECTA/blob/main/Captura.JPG
 # Metodologia:
 ## instalar catkin build:
+Es un complemento de ROS que permite comunicarlo con los motores Dinamixel del manipulador.
+## instalar el paquete pxROBOT:
+Este paquete crea los nodos para acceder a los servicios de los motores dinamixel
+## instalar libreria de Peter Corke:
+se instala para pyton, y permite dibujar las posiciones articulares del manipulador en una grafica que se ve en el PC.
+
 
 
