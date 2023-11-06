@@ -168,14 +168,21 @@ Finalmente, se grafica la nueva posición mediante el toolbox. Se agrega el arre
 
     
 ```
-Asi se verá la consola:
+Este es el resultado:
+https://github.com/robinsonorduz/LABORATORIO-4-CINEMATICA-DIRECTA/blob/main/posicion1.JPG
 
 
 
 
-<h2>Código para lograr las posiciones del robot mediante servicios </h2>
+## Calcular posiciones del robot con servicios:
 
-Al igual que en el anterior, se requiere tener inicializado el paquete px_robot. En este programa se importan las librerías:
+Se inicia px_robot, se crea el manipulador, y dos metodos que calculan el valor de articulación que se necesita.
+
+
+Se crea el robot en el Toolbox como se explicó anteriormente. Se crean dos métodos que permitirán utilizar el servicio y calcular el valor que debe ser enviado.
+
+El primer método es jointCommand(), que recibe como argumentos un tipo de comando, un identificador de articulación, una dirección, un valor y un tiempo. Este espera a que haya disponibilidad del servicio, a continuación lo utiliza para enviar el nuevo comando con los nuevos parámetros y comprueba si funcionó correctamente:
+
 
 ```  python
   import rospy
@@ -183,15 +190,6 @@ Al igual que en el anterior, se requiere tener inicializado el paquete px_robot.
   import roboticstoolbox as rtb
   import numpy as np
   from dynamixel_workbench_msgs.srv import DynamixelCommand
-    
-```
-
-Se crea el robot en el Toolbox como se explicó anteriormente. Se crean dos métodos que permitirán utilizar el servicio y calcular el valor que debe ser enviado.
-
-El primer método es jointCommand(), el cual recibe como argumentos un tipo de comando, un identificador de articulación, una dirección, un valor y un tiempo. Este espera a que haya disponibilidad del servicio, a continuación lo utiliza para enviar el nuevo comando con los nuevos parámetros y comprueba si funcionó correctamente. El código es:
-
-
-```  python
   def jointCommand(command, id_num, addr_name, value, time):
     #rospy.init_node('joint_node', anonymous=False)
     rospy.wait_for_service('dynamixel_workbench/dynamixel_command')
@@ -206,7 +204,7 @@ El primer método es jointCommand(), el cual recibe como argumentos un tipo de c
     
 ```
 
-Por otro lado, el método calculaAngulo() se utiliza para calcuular el valor que debe ser enviado a cada motor, esto debido a que mediante el servicio se envía una señal de entre 0 y 1023  en vez de un ángulo en radianes, para ello por tanto, se determina la posición de HOME para cada articulación en estos nuevos valores. A continuación, con el ángulo en grados que se desea se hace la conversión a la nueva señal siguiendo una sencilla regla de tres. Para la articulación 4 se deben tener en cuenta los rangos articulares, esto debido a que la posición HOME definida no permite que se alcancen los ángulos solicitados en los casos 4 y 5. El código es el siguiente:
+El otro método es calculaAngulo() se utiliza para calcuular el valor que debe ser enviado a cada motor, esto debido a que mediante el servicio se envía una señal de entre 0 y 1023  en vez de un ángulo en radianes, se determina la posición de HOME para cada articulación en estos nuevos valores. A continuación, con el ángulo en grados que se desea se hace la conversión a la nueva señal:
 
 
 ```  python
@@ -224,7 +222,7 @@ def calculaAngulo(angulo, ID):
     return salidaA
     
 ```
-Finalmente se tiene una porción main de código, en la cual lo primero que se busca es establecer un límite de torque para evitar sobrecarga de corriente en los motores:
+Finalmente se tiene una porción de código, que límita el torque en los motores:
 
 ```  python
         jointCommand('', 1, 'Torque_Limit', 500, 0)
