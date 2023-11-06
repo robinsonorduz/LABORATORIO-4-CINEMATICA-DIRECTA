@@ -13,7 +13,7 @@ Este paquete crea los nodos para acceder a los servicios de los motores dinamixe
 se instala para pyton, y permite dibujar las posiciones articulares del manipulador en una grafica que se ve en el PC.
 
 ## Crear el manipulador en el entorno virtual:
-se importan las librerias que van a dibujar el manipulador a partir de la tabla DH
+se importan las librerias que van a dibujar el manipulador y configurar las variables a partir de la tabla DH
 ``` python
   
     import roboticstoolbox as rtb
