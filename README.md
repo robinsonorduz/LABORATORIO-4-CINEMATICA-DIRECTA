@@ -13,7 +13,7 @@ Este paquete crea los nodos para acceder a los servicios de los motores dinamixe
 se instala para pyton, y permite dibujar las posiciones articulares del manipulador en una grafica que se ve en el PC.
 
 ## Crear el manipulador en el entorno virtual:
-se importan las librerias que van a dibujar el manipulador y configurar las variables a partir de la tabla DH
+se importan las librerias que van a dibujar el manipulador y configurar las variables a partir de la tabla DH para generar el grafico que copia la posicion del manipulador.
 ``` python
   
     import roboticstoolbox as rtb
@@ -25,5 +25,6 @@ se importan las librerias que van a dibujar el manipulador y configurar las vari
       rtb.RevoluteDH(a=0.105, offset= np.pi/2),
       rtb.RevoluteDH(a=0.110, offset= np.pi/2)
     ], name= "Pincher")
+robot.plot([np.pi/6, -np.pi/3, 0, 0]).hold()
 ```
 
